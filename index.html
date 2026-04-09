@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
 <title>El Cuento de Natalia Montserrat | Bautizo & Primer Año</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -10,46 +10,41 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none; /* Mejora la sensación de libro, pero sin romper selección de texto */
   }
 
   body {
-    background: #2c2418; /* fondo de madera oscura que simula un estante */
+    background: #2c2418;
     font-family: 'Cormorant Garamond', serif;
     overflow-x: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px;
+    padding: 16px;
   }
 
-  /* contenedor del libro real */
+  /* LIBRO - total responsivo */
   .storybook {
     position: relative;
-    max-width: 1100px;
+    max-width: 1000px;
     width: 100%;
     background: #fdf8ed;
     border-radius: 24px 16px 24px 16px;
-    box-shadow: 0 30px 50px rgba(0,0,0,0.4), 0 0 0 12px #e8d9b0, 0 0 0 20px #b87c4a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 8px #e8d9b0, 0 0 0 14px #b87c4a;
     overflow: hidden;
-    transition: all 0.3s;
   }
 
-  /* PÁGINAS (efecto libro real) */
   .book-pages {
-    position: relative;
     background: #fff9ef;
-    min-height: 85vh;
+    min-height: 75vh;
   }
 
   .page {
     display: none;
-    animation: pageFade 0.5s ease-out forwards;
-    padding: 50px 48px;
-    position: relative;
+    animation: pageFade 0.4s ease-out forwards;
+    padding: 32px 28px;
     background: #fffcf5;
-    min-height: 85vh;
+    min-height: 75vh;
     flex-direction: column;
   }
 
@@ -58,25 +53,25 @@
   }
 
   @keyframes pageFade {
-    0% { opacity: 0; transform: translateX(20px); }
+    0% { opacity: 0; transform: translateX(12px); }
     100% { opacity: 1; transform: translateX(0); }
   }
 
-  /* numeración de cuento */
+  /* Números de página */
   .page-number {
     position: absolute;
-    bottom: 24px;
-    right: 40px;
+    bottom: 20px;
+    right: 28px;
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     color: #c2a575;
     letter-spacing: 2px;
   }
 
-  /* elementos decorativos de cuento */
+  /* TIPOGRAFÍA DE CUENTO */
   .drop-cap {
     font-family: 'Playfair Display', serif;
-    font-size: 68px;
+    font-size: 58px;
     font-weight: 700;
     float: left;
     line-height: 0.8;
@@ -87,227 +82,314 @@
 
   .chapter-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 42px;
+    font-size: 38px;
     color: #8b3c2a;
-    margin-bottom: 24px;
-    border-left: 6px solid #e2b87a;
-    padding-left: 28px;
+    margin-bottom: 20px;
+    border-left: 5px solid #e2b87a;
+    padding-left: 20px;
     line-height: 1.1;
   }
 
   .chapter-sub {
-    font-size: 14px;
-    letter-spacing: 6px;
+    font-size: 12px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: #c6a15b;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   .story-text {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.65;
     color: #2e241f;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     font-weight: 400;
   }
 
   .story-text p {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
-  /* ilustraciones estilo cuento */
+  /* ILUSTRACIONES */
   .fairy-illustration {
     display: flex;
     justify-content: center;
-    margin: 30px 0;
+    margin: 20px 0;
+    flex-wrap: wrap;
   }
 
   .illu-frame {
     background: #fcf3e0;
-    padding: 16px 24px;
+    padding: 12px 20px;
     border-radius: 60px 20px 60px 20px;
     display: inline-flex;
     align-items: center;
-    gap: 24px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-    border: 1px solid #f0ddbc;
+    gap: 16px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.04);
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .illu-icon {
-    font-size: 68px;
-    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.1));
+    font-size: 52px;
   }
 
   .illu-text {
     font-family: 'Dancing Script', cursive;
-    font-size: 28px;
+    font-size: 26px;
     color: #b1472c;
   }
 
-  /* tarjetas de evento estilo pergamino */
+  /* tarjetas pergamino */
   .scroll-card {
     background: #fff7e8;
-    border-radius: 40px 12px 40px 12px;
-    padding: 20px;
-    margin: 20px 0;
-    border-left: 8px solid #d4af6c;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+    border-radius: 30px 8px 30px 8px;
+    padding: 16px;
+    margin: 16px 0;
+    border-left: 6px solid #d4af6c;
   }
 
   .two-columns {
     display: flex;
-    gap: 32px;
-    margin: 30px 0;
+    gap: 20px;
+    margin: 20px 0;
     flex-wrap: wrap;
   }
 
   .column {
     flex: 1;
     background: #fffbf0;
-    padding: 24px;
-    border-radius: 28px;
+    padding: 18px;
+    border-radius: 24px;
     border: 1px solid #eddbb6;
+    min-width: 160px;
   }
 
+  /* Familia */
   .family-tree {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 14px;
     justify-content: center;
-    margin: 28px 0;
+    margin: 20px 0;
   }
 
   .family-card {
     background: white;
-    border-radius: 48px 16px 48px 16px;
-    padding: 16px 24px;
+    border-radius: 40px 12px 40px 12px;
+    padding: 12px 16px;
     text-align: center;
-    width: 160px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    width: 140px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.04);
     border-bottom: 3px solid #e2b87a;
   }
 
   .family-name {
     font-family: 'Dancing Script', cursive;
-    font-size: 24px;
+    font-size: 22px;
     color: #6a3e2c;
   }
 
+  /* Mapas */
   .map-vintage {
     background: #e8ddc5;
-    border-radius: 28px;
+    border-radius: 24px;
     padding: 12px;
-    margin: 20px 0;
+    margin: 12px 0;
   }
 
   iframe {
-    border-radius: 20px;
+    border-radius: 18px;
     width: 100%;
-    height: 200px;
+    height: 180px;
     border: none;
   }
 
+  /* Navegación móvil */
   .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 48px 32px;
+    padding: 18px 24px;
     background: #fef5e6;
     border-top: 2px dashed #e2c294;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   .nav-btn {
     background: #9b5e3c;
     border: none;
-    padding: 12px 28px;
+    padding: 10px 20px;
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #ffefcf;
     border-radius: 40px;
     cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    display: flex;
+    transition: 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
   }
 
-  .nav-btn:hover {
-    background: #7a452a;
-    transform: scale(1.02);
-  }
-
+  .nav-btn:active { transform: scale(0.96); background: #7a452a; }
   .page-indicator {
     font-family: 'Inter', sans-serif;
     background: #ebdfc9;
-    padding: 6px 20px;
+    padding: 6px 18px;
     border-radius: 40px;
-    font-size: 14px;
+    font-size: 13px;
     color: #63432e;
   }
 
-  /* elemento mágico (espejo) */
+  /* ESPEJO MÁGICO (imagen adaptada perfectamente) */
   .mirror-magic {
     text-align: center;
-    margin: 28px 0;
+    margin: 20px 0;
     cursor: pointer;
   }
   .mirror-frame {
     background: radial-gradient(circle, #f7e9cf, #e9d5b5);
     display: inline-block;
-    padding: 16px;
+    padding: 12px;
     border-radius: 100px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
   }
   .mirror-inner {
     background: #1c1a2a;
-    width: 180px;
-    height: 220px;
+    width: 220px;
+    height: 260px;
     border-radius: 50% 50% 45% 45%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: all 0.4s;
+    transition: all 0.3s;
     color: #fadf9e;
     font-family: 'Dancing Script', cursive;
+    position: relative;
+    overflow: hidden;
   }
-  .mirror-hidden {
+  .mirror-image-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1c1a2a;
+  }
+  .mirror-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50% 50% 45% 45%;
+  }
+  .mirror-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    padding: 20px;
+  }
+  .mirror-hidden-layer {
     opacity: 0;
-    transition: opacity 0.6s;
+    transition: opacity 0.5s ease;
   }
-  .mirror-revealed {
+  .mirror-revealed-layer {
     opacity: 1;
   }
-
-  /* adornos de cuento */
-  .flourish {
+  .reveal-text {
     text-align: center;
-    font-size: 28px;
-    color: #dbb87c;
-    margin: 24px 0;
-    letter-spacing: 12px;
+    margin-top: 16px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: #b1472c;
+    transition: 0.3s;
   }
 
-  @media (max-width: 750px) {
-    .page { padding: 32px 24px; }
-    .chapter-title { font-size: 32px; }
+  /* Flourish */
+  .flourish {
+    text-align: center;
+    font-size: 24px;
+    color: #dbb87c;
+    margin: 20px 0;
+    letter-spacing: 8px;
+  }
+
+  /* Countdown móvil */
+  .countdown-flex {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 24px 0;
+  }
+  .count-unit {
+    background: #fff0df;
+    border-radius: 28px;
+    padding: 12px 16px;
+    text-align: center;
+    min-width: 80px;
+  }
+  .count-number {
+    font-size: 38px;
+    font-weight: bold;
+    color: #b1472c;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Ajustes 100% móvil */
+  @media (max-width: 650px) {
+    body { padding: 12px; }
+    .page { padding: 24px 18px; }
+    .chapter-title { font-size: 30px; padding-left: 14px; }
     .story-text { font-size: 16px; }
+    .family-card { width: 130px; }
+    .mirror-inner { width: 180px; height: 220px; }
+    .illu-text { font-size: 22px; }
+    .nav-btn { padding: 8px 16px; font-size: 14px; }
+  }
+
+  @media (max-width: 480px) {
+    .family-card { width: 115px; }
+    .family-name { font-size: 18px; }
+    .count-unit { min-width: 65px; padding: 8px 12px; }
+    .count-number { font-size: 28px; }
+    .mirror-inner { width: 160px; height: 200px; }
   }
 
   .sparkle-pop {
     position: fixed;
     pointer-events: none;
-    font-size: 24px;
-    animation: sparkleFly 1s ease-out forwards;
-    z-index: 999;
+    font-size: 22px;
+    animation: sparkleFly 0.9s ease-out forwards;
+    z-index: 9999;
   }
-
   @keyframes sparkleFly {
-    0% { opacity: 1; transform: scale(0.5) translateY(0); }
-    100% { opacity: 0; transform: scale(1.2) translateY(-80px); }
+    0% { opacity: 1; transform: scale(0.3) translateY(0); }
+    100% { opacity: 0; transform: scale(1.2) translateY(-70px); }
+  }
+  /* estrellas flotantes sutiles */
+  .floating-star {
+    position: fixed;
+    pointer-events: none;
+    font-size: 12px;
+    opacity: 0.5;
+    animation: floatStar 6s infinite linear;
+    z-index: 0;
+  }
+  @keyframes floatStar {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.6; }
+    100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
   }
 </style>
 </head>
@@ -315,14 +397,14 @@
 
 <div class="storybook">
   <div class="book-pages">
-    <!-- PÁGINA 1: PORTADA DEL CUENTO -->
+    <!-- PORTADA -->
     <div class="page active-page" id="page1">
       <div class="flourish">✧ ✦ ✧</div>
-      <div style="text-align: center; margin: 20px 0 30px;">
-        <span style="font-size: 80px;">👑</span>
-        <h1 class="chapter-title" style="font-size: 68px; border-left: none; text-align: center; padding: 0;">El Cuento de<br>Natalia Montserrat</h1>
-        <div style="height: 4px; width: 100px; background: #e2b87a; margin: 16px auto;"></div>
-        <p style="font-size: 18px; font-style: italic; color: #9b6e48;">"Una princesa, un bautizo y un año de magia"</p>
+      <div style="text-align: center; margin: 12px 0 20px;">
+        <span style="font-size: 70px;">👑</span>
+        <h1 class="chapter-title" style="font-size: 52px; border-left: none; text-align: center; padding: 0;">El Cuento de<br>Natalia Montserrat</h1>
+        <div style="height: 3px; width: 80px; background: #e2b87a; margin: 12px auto;"></div>
+        <p style="font-size: 17px; font-style: italic; color: #9b6e48;">"Una princesa, un bautizo y un año de magia"</p>
       </div>
       <div class="fairy-illustration">
         <div class="illu-frame">
@@ -330,33 +412,31 @@
           <span class="illu-text">Había una vez...</span>
         </div>
       </div>
-      <div class="story-text" style="margin-top: 20px;">
-        <p><span class="drop-cap">E</span>n un reino bañado por la luz del golfo, nació una niña que cambió el destino de sus padres. El 30 de mayo del 2026, la corte entera se vestirá de gala para celebrar dos gestas sagradas: su encuentro con Dios en el bautizo, y su primer vuelta al sol.</p>
+      <div class="story-text" style="margin-top: 12px;">
+        <p><span class="drop-cap">E</span>n un reino bañado por la luz del golfo, nació una niña que cambió el destino de sus padres. El 30 de mayo de 2026, la corte entera se vestirá de gala para celebrar dos gestas sagradas: su encuentro con Dios en el bautizo, y su primera vuelta al sol.</p>
         <p>Hoy, las páginas de este libro te invitan a ser parte de la historia más hermosa jamás contada.</p>
       </div>
       <div class="flourish">❁  ❁  ❁</div>
       <div class="page-number">1</div>
     </div>
 
-    <!-- PÁGINA 2: LA PRINCESA Y SU CORAZÓN CATÓLICO -->
+    <!-- PÁGINA 2: BAUTIZO -->
     <div class="page" id="page2">
       <div class="chapter-sub">Capítulo I</div>
       <h2 class="chapter-title">La promesa del cielo</h2>
       <div class="story-text">
         <p><span class="drop-cap">«D</span>ejen que los niños vengan a mí» —dijo el Buen Pastor—. Y Natalia Montserrat, con su sonrisa de lucero, será recibida en la fe el sábado 30 de mayo. La Parroquia Cristo Rey abrirá sus puertas a las 10 de la mañana para sellar este pacto de amor eterno.</p>
-        <p>En cada vela encendida, en cada agua bendita, un ángel susurrará su nombre. Este bautizo no es un simple rito, es la primera página de su leyenda celestial.</p>
+        <p>En cada vela encendida, en cada agua bendita, un ángel susurrará su nombre. Este bautizo es la primera página de su leyenda celestial.</p>
       </div>
       <div class="scroll-card">
-        <p style="font-weight: 600; color: #a0522d;">🕊️  Sacramento del Bautizo  🕊️</p>
+        <p style="font-weight: 600; color: #a0522d;">🕊️ Sacramento del Bautizo</p>
         <p>⛪ 10:00 a.m. · Parroquia Cristo Rey<br>✨ "Recibirás la luz de Cristo"</p>
       </div>
-      <div class="fairy-illustration">
-        <span style="font-size: 48px;">✝️ 🕯️ 🌟</span>
-      </div>
+      <div class="fairy-illustration"><span style="font-size: 44px;">✝️ 🕯️ 🌟</span></div>
       <div class="page-number">2</div>
     </div>
 
-    <!-- PÁGINA 3: LA GRAN CELEBRACIÓN DEL PRIMER AÑO -->
+    <!-- PÁGINA 3: FESTEJO -->
     <div class="page" id="page3">
       <div class="chapter-sub">Capítulo II</div>
       <h2 class="chapter-title">El festín de los sueños</h2>
@@ -365,114 +445,94 @@
         <p>Trae tu deseo más profundo, porque ese día los sueños se vuelven realidad.</p>
       </div>
       <div class="two-columns">
-        <div class="column"><span style="font-size: 38px;">🎂</span><br><strong>Festejo</strong><br>2:00 p.m. · Salón las Palmas<br>Dress code: Etiqueta cuento de hadas</div>
-        <div class="column"><span style="font-size: 38px;">🍎</span><br><strong>Manzanas mágicas</strong><br>Habrá sorpresas inspiradas en el bosque encantado</div>
+        <div class="column"><span style="font-size: 38px;">🎂</span><br><strong>Festejo</strong><br>2:00 p.m. · Salón las Palmas<br>Dress code: Etiqueta cuento</div>
+        <div class="column"><span style="font-size: 38px;">🍎</span><br><strong>Manzanas mágicas</strong><br>Sorpresas del bosque encantado</div>
       </div>
       <div class="page-number">3</div>
     </div>
 
-    <!-- PÁGINA 4: LA CORTE REAL (PAPÁS, PADRINOS, ABUELOS) -->
+    <!-- PÁGINA 4: FAMILIA REAL -->
     <div class="page" id="page4">
       <div class="chapter-sub">Capítulo III</div>
       <h2 class="chapter-title">Los guardianes del reino</h2>
-      <div class="story-text">
-        <p>Toda princesa tiene un linaje de valientes. Sus majestades, Omar Ibarra y Karolina Rodriguez, son los reyes que guían sus pasos. Y ante el altar, dos nobles caballeros sostendrán su fe: Braulio Fragoso y Ana Karen Ibarra, padrinos de bautizo.</p>
-      </div>
+      <div class="story-text"><p>Toda princesa tiene un linaje de valientes. Omar Ibarra y Karolina Rodriguez, sus majestades. Y ante el altar, Braulio Fragoso y Ana Karen Ibarra, padrinos de bautizo.</p></div>
       <div class="family-tree">
-        <div class="family-card"><span style="font-size: 40px;">👑</span><div class="family-name">Omar Ibarra</div><div>Papá</div></div>
-        <div class="family-card"><span style="font-size: 40px;">👑</span><div class="family-name">Karolina Rodriguez</div><div>Mamá</div></div>
-        <div class="family-card"><span style="font-size: 40px;">🕯️</span><div class="family-name">Braulio Fragoso</div><div>Padrino</div></div>
-        <div class="family-card"><span style="font-size: 40px;">🌹</span><div class="family-name">Ana Karen Ibarra</div><div>Madrina</div></div>
+        <div class="family-card"><span style="font-size: 38px;">👑</span><div class="family-name">Omar Ibarra</div><div>Papá</div></div>
+        <div class="family-card"><span style="font-size: 38px;">👑</span><div class="family-name">Karolina R.</div><div>Mamá</div></div>
+        <div class="family-card"><span style="font-size: 38px;">🕯️</span><div class="family-name">Braulio F.</div><div>Padrino</div></div>
+        <div class="family-card"><span style="font-size: 38px;">🌹</span><div class="family-name">Ana Karen I.</div><div>Madrina</div></div>
       </div>
-      <div class="story-text">
-        <p>Y los abuelos, como viejos robles que resguardan el castillo: María del Carmen, Miguel Ibarra Tirado, Margarita Rodríguez Gómez y Silvia Castro Toral. Su legado es el hechizo que protege a Natalia.</p>
-      </div>
+      <div class="story-text"><p>Y los abuelos: María del Carmen, Miguel Ibarra Tirado, Margarita Rodríguez Gómez y Silvia Castro Toral. Su legado protege a Natalia.</p></div>
       <div class="flourish">👵🏼👴🏼💖</div>
       <div class="page-number">4</div>
     </div>
 
-    <!-- PÁGINA 5: EL ESPEJO MÁGICO (INTERACTIVIDAD REVELADA) -->
+    <!-- PÁGINA 5: ESPEJO MÁGICO (IMAGEN ADAPTADA) -->
     <div class="page" id="page5">
       <div class="chapter-sub">Capítulo IV</div>
       <h2 class="chapter-title">El espejo encantado</h2>
-      <div class="story-text">
-        <p>Se dice que en lo más profundo del bosque hay un espejo que revela la verdadera belleza. Toca el cristal mágico y Natalia Montserrat te mostrará su resplandor.</p>
-      </div>
+      <div class="story-text"><p>Se dice que en lo profundo del bosque hay un espejo que revela la verdadera belleza. Toca el cristal mágico y Natalia Montserrat te mostrará su resplandor.</p></div>
       <div class="mirror-magic" id="magicMirrorTrigger">
         <div class="mirror-frame">
           <div class="mirror-inner" id="mirrorBox">
-            <span id="mirrorMessage">✨ Toca el espejo ✨</span>
-            <div id="mirrorImageContainer" style="margin-top: 12px; width: 100px; height: 100px; border-radius: 50%; background: #2f2a44; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-              <span id="mirrorIcon" style="font-size: 48px;">🪞</span>
+            <div id="mirrorImgContainer" class="mirror-image-wrapper">
+              <!-- Imagen se insertará dinámicamente ocupando todo el espejo -->
+            </div>
+            <div id="mirrorPlaceholderContent" class="mirror-placeholder" style="position:relative; z-index:3;">
+              <span style="font-size: 44px;">🪞</span>
+              <span style="font-size: 14px;">Toca el espejo</span>
             </div>
           </div>
         </div>
       </div>
-      <div id="revealedText" style="text-align: center; margin-top: 20px; font-family: 'Dancing Script', cursive; font-size: 22px; color: #b1472c; opacity: 0; transition: 0.5s;">"La más hermosa del reino"</div>
-      <div class="story-text" style="margin-top: 20px;">
-        <p>El hechizo se activó: Natalia es la princesa de luz que ilumina cada rincón.</p>
-      </div>
+      <div id="mirrorRevealText" class="reveal-text" style="opacity:0;">✨ "La más hermosa del reino" ✨</div>
+      <div class="story-text" style="margin-top: 14px; text-align:center"><p>El hechizo se activó: Natalia es la princesa de luz.</p></div>
       <div class="page-number">5</div>
     </div>
 
-    <!-- PÁGINA 6: MAPAS Y RUTA AL CASTILLO -->
+    <!-- PÁGINA 6: MAPAS -->
     <div class="page" id="page6">
       <div class="chapter-sub">Capítulo V</div>
-      <h2 class="chapter-title">El camino hacia el cuento</h2>
-      <div class="story-text">
-        <p>Sigue las migas de pan doradas hasta los dos portales del reino:</p>
-      </div>
+      <h2 class="chapter-title">El camino al castillo</h2>
+      <div class="story-text"><p>Sigue las migas de pan doradas hasta los dos portales del reino:</p></div>
       <div class="two-columns">
-        <div class="map-vintage">
-          <strong>🕊️ Parroquia Cristo Rey (Bautizo)</strong>
-          <iframe src="https://maps.google.com/maps?q=Parroquia%20Cristo%20Rey%20Veracruz&t=&z=14&output=embed" allowfullscreen loading="lazy"></iframe>
-          <a href="https://maps.google.com/?q=Parroquia+Cristo+Rey+Veracruz" target="_blank" style="color:#a0522d;">Abrir en mapa →</a>
-        </div>
-        <div class="map-vintage">
-          <strong>🎂 Salón las Palmas (Festejo)</strong>
-          <iframe src="https://maps.google.com/maps?q=Sal%C3%B3n%20las%20Palmas%20Veracruz&t=&z=14&output=embed" allowfullscreen loading="lazy"></iframe>
-          <a href="https://maps.google.com/?q=Sal%C3%B3n+las+Palmas+Veracruz" target="_blank" style="color:#a0522d;">Abrir en mapa →</a>
-        </div>
+        <div class="map-vintage"><strong>🕊️ Parroquia Cristo Rey</strong><iframe src="https://maps.google.com/maps?q=Parroquia%20Cristo%20Rey%20Veracruz&t=&z=14&output=embed" allowfullscreen loading="lazy"></iframe><a href="https://maps.google.com/?q=Parroquia+Cristo+Rey+Veracruz" target="_blank" style="color:#a0522d; font-size:13px;">Abrir en mapa →</a></div>
+        <div class="map-vintage"><strong>🎂 Salón las Palmas</strong><iframe src="https://maps.google.com/maps?q=Sal%C3%B3n%20las%20Palmas%20Veracruz&t=&z=14&output=embed" allowfullscreen loading="lazy"></iframe><a href="https://maps.google.com/?q=Sal%C3%B3n+las+Palmas+Veracruz" target="_blank" style="color:#a0522d; font-size:13px;">Abrir en mapa →</a></div>
       </div>
       <div class="flourish">🗺️ ✨ 🏰</div>
       <div class="page-number">6</div>
     </div>
 
-    <!-- PÁGINA 7: CUENTA REGRESIVA MÁGICA Y CIERRE -->
+    <!-- PÁGINA 7: CUENTA REGRESIVA Y CIERRE -->
     <div class="page" id="page7">
       <div class="chapter-sub">Epílogo</div>
       <h2 class="chapter-title">Y la magia está por comenzar...</h2>
-      <div class="story-text">
-        <p>Faltan pocos suspiros para que el gran día llegue. La corte te espera con los brazos abiertos.</p>
+      <div class="story-text"><p>Faltan pocos suspiros para que el gran día llegue. La corte te espera con los brazos abiertos.</p></div>
+      <div class="countdown-flex">
+        <div class="count-unit"><span class="count-number" id="cdDays">--</span><br>días</div>
+        <div class="count-unit"><span class="count-number" id="cdHours">--</span><br>horas</div>
+        <div class="count-unit"><span class="count-number" id="cdMins">--</span><br>minutos</div>
+        <div class="count-unit"><span class="count-number" id="cdSecs">--</span><br>segundos</div>
       </div>
-      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin: 30px 0;">
-        <div style="background: #fff0df; border-radius: 28px; padding: 16px 20px; text-align: center; min-width: 100px;"><span id="cdDays" style="font-size: 48px; font-weight: bold; color:#b1472c;">--</span><br>días</div>
-        <div style="background: #fff0df; border-radius: 28px; padding: 16px 20px; text-align: center; min-width: 100px;"><span id="cdHours" style="font-size: 48px; font-weight: bold; color:#b1472c;">--</span><br>horas</div>
-        <div style="background: #fff0df; border-radius: 28px; padding: 16px 20px; text-align: center; min-width: 100px;"><span id="cdMins" style="font-size: 48px; font-weight: bold; color:#b1472c;">--</span><br>minutos</div>
-        <div style="background: #fff0df; border-radius: 28px; padding: 16px 20px; text-align: center; min-width: 100px;"><span id="cdSecs" style="font-size: 48px; font-weight: bold; color:#b1472c;">--</span><br>segundos</div>
-      </div>
-      <div class="story-text" style="text-align: center;">
-        <p>“Y colorín colorado, este cuento aún no ha terminado: el 30 de mayo de 2026, Natalia Montserrat escribirá su página más feliz junto a ti.”</p>
-        <p style="margin-top: 20px;">💛 Con amor eterno, sus padres y toda la familia real.</p>
-      </div>
+      <div class="story-text" style="text-align:center;"><p>“Y colorín colorado, este cuento aún no ha terminado: el 30 de mayo de 2026, Natalia Montserrat escribirá su página más feliz junto a ti.”</p><p style="margin-top: 16px;">💛 Con amor eterno, sus padres y toda la familia real.</p></div>
       <div class="flourish">🌟 👑 🌟</div>
       <div class="page-number">7</div>
     </div>
   </div>
 
   <div class="navigation">
-    <button class="nav-btn" id="prevBtn">◀  Página anterior</button>
+    <button class="nav-btn" id="prevBtn">◀  Anterior</button>
     <div class="page-indicator" id="pageIndicator">Página 1 de 7</div>
-    <button class="nav-btn" id="nextBtn">Siguiente página  ▶</button>
+    <button class="nav-btn" id="nextBtn">Siguiente  ▶</button>
   </div>
 </div>
 
-<audio id="bgMelody" loop>
+<audio id="bgMelody" loop preload="auto">
   <source src="https://mp3tourl.com/audio/1775016857638-e67ed140-2f9c-4dab-942b-60e929de8093.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  // CONTROL DE PÁGINAS EFECTO LIBRO
+  // ---------- PAGINACIÓN MÓVIL ----------
   let currentPage = 1;
   const totalPages = 7;
   const pages = document.querySelectorAll('.page');
@@ -482,66 +542,41 @@
 
   function updatePages() {
     pages.forEach((page, idx) => {
-      if (idx + 1 === currentPage) {
-        page.classList.add('active-page');
-      } else {
-        page.classList.remove('active-page');
-      }
+      if (idx + 1 === currentPage) page.classList.add('active-page');
+      else page.classList.remove('active-page');
     });
     indicator.innerText = `Página ${currentPage} de ${totalPages}`;
-    // efecto de sonido de página opcional (sutil)
-    if(window.pageFlipSound) {} // solo estético
-    createGentleSparkle(); // pequeña magia al cambiar
+    createGentleSparkle();
   }
 
   function createGentleSparkle() {
-    for(let i=0; i<6; i++) {
+    for (let i = 0; i < 5; i++) {
       const spark = document.createElement('div');
       spark.className = 'sparkle-pop';
-      spark.innerText = ['✨','📖','🌟','🍎','👑'][Math.floor(Math.random()*5)];
+      spark.innerText = ['✨', '📖', '🌟', '🍎', '👑'][Math.floor(Math.random() * 5)];
       spark.style.left = Math.random() * window.innerWidth + 'px';
-      spark.style.top = Math.random() * 300 + 100 + 'px';
+      spark.style.top = Math.random() * 300 + 80 + 'px';
       document.body.appendChild(spark);
       setTimeout(() => spark.remove(), 800);
     }
   }
 
-  prevBtn.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      updatePages();
-    } else {
-      // animación de rebote
-      prevBtn.style.transform = 'scale(0.95)';
-      setTimeout(() => prevBtn.style.transform = '', 200);
-    }
-  });
-  nextBtn.addEventListener('click', () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      updatePages();
-    } else {
-      nextBtn.style.transform = 'scale(0.95)';
-      setTimeout(() => nextBtn.style.transform = '', 200);
-    }
-  });
-
+  prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; updatePages(); } else { prevBtn.style.transform = 'scale(0.95)'; setTimeout(() => prevBtn.style.transform = '', 150); } });
+  nextBtn.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; updatePages(); } else { nextBtn.style.transform = 'scale(0.95)'; setTimeout(() => nextBtn.style.transform = '', 150); } });
   updatePages();
 
-  // COUNTDOWN real 30 de mayo 2026
+  // ---------- COUNTDOWN 30 MAYO 2026 ----------
   function updateCountdown() {
-    const target = new Date('2026-05-30T10:00:00-06:00'); // hora central aproximada
+    const target = new Date('2026-05-30T10:00:00-06:00');
     const now = new Date();
     const diff = target - now;
     if (diff <= 0) {
-      document.getElementById('cdDays').innerText = '0';
-      document.getElementById('cdHours').innerText = '0';
-      document.getElementById('cdMins').innerText = '0';
-      document.getElementById('cdSecs').innerText = '0';
+      document.getElementById('cdDays').innerText = '0'; document.getElementById('cdHours').innerText = '0';
+      document.getElementById('cdMins').innerText = '0'; document.getElementById('cdSecs').innerText = '0';
       return;
     }
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff % (86400000)) / 3600000);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % 86400000) / 3600000);
     const mins = Math.floor((diff % 3600000) / 60000);
     const secs = Math.floor((diff % 60000) / 1000);
     document.getElementById('cdDays').innerText = days;
@@ -552,99 +587,104 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // ESPEJO MÁGICO (revelación imagen)
-  let mirrorRevealed = false;
-  const mirrorDiv = document.getElementById('mirrorBox');
-  const mirrorMsg = document.getElementById('mirrorMessage');
-  const mirrorIconSpan = document.getElementById('mirrorIcon');
-  const revealedDiv = document.getElementById('revealedText');
+  // ---------- ESPEJO MÁGICO: IMAGEN 100% ADAPTADA AL TAMAÑO DEL ESPEJO ----------
+  let mirrorActive = false;
+  const mirrorContainer = document.getElementById('mirrorImgContainer');
+  const placeholderDiv = document.getElementById('mirrorPlaceholderContent');
+  const revealTextSpan = document.getElementById('mirrorRevealText');
+  const mirrorBoxDiv = document.getElementById('mirrorBox');
 
-  // Función para generar chispas al tocar espejo
-  function sparklesFromMirror(e) {
-    for (let i=0;i<12;i++) {
+  // Función para crear chispas al tacto
+  function sparklesFromTouch(e) {
+    let x = e.clientX;
+    let y = e.clientY;
+    if (!x && e.touches) { x = e.touches[0].clientX; y = e.touches[0].clientY; }
+    if (!x) { x = window.innerWidth / 2; y = window.innerHeight / 2; }
+    for (let i = 0; i < 14; i++) {
       const sp = document.createElement('div');
       sp.className = 'sparkle-pop';
-      sp.innerText = ['✨','🪞','💫','⭐','🍎'][Math.floor(Math.random()*5)];
-      const x = e.clientX || window.innerWidth/2;
-      const y = e.clientY || window.innerHeight/2;
-      sp.style.left = (x + (Math.random() - 0.5)*80) + 'px';
-      sp.style.top = (y + (Math.random() - 0.5)*60) + 'px';
+      sp.innerText = ['✨', '🪞', '💫', '⭐', '🍎', '👑'][Math.floor(Math.random() * 6)];
+      sp.style.left = (x + (Math.random() - 0.5) * 100) + 'px';
+      sp.style.top = (y + (Math.random() - 0.5) * 80) + 'px';
       document.body.appendChild(sp);
       setTimeout(() => sp.remove(), 900);
     }
   }
 
-  mirrorDiv?.addEventListener('click', (event) => {
-    sparklesFromMirror(event);
-    if (!mirrorRevealed) {
-      // mostramos imagen interna de la princesa (foto simbólica)
-      const containerImg = document.getElementById('mirrorImageContainer');
-      containerImg.innerHTML = `<img src="https://i.postimg.cc/h4wWYxDm/47869e4c-18e9-4991-9d8f-391342e1b7ee.jpg" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:2px solid gold;">`;
-      mirrorMsg.innerHTML = '✨ Natalia Montserrat ✨';
-      mirrorIconSpan.style.opacity = '0';
-      revealedDiv.style.opacity = '1';
-      revealedDiv.innerHTML = '"La más bella princesa del reino" 👑';
-      // añadir animación de brillo
-      mirrorDiv.style.boxShadow = '0 0 0 4px #f5d742, 0 0 0 8px rgba(200,100,0,0.4)';
-      mirrorRevealed = true;
+  // imagen de alta calidad de princesa (se adapta al 100% del espejo)
+  const princessImageURL = "https://i.postimg.cc/h4wWYxDm/47869e4c-18e9-4991-9d8f-391342e1b7ee.jpg";
+  // fallback local si falla carga
+  const fallbackImage = "https://placehold.co/400x500/f0e4c0/8B6914?text=Natalia+Montserrat";
+
+  function revealMirrorImage(event) {
+    sparklesFromTouch(event);
+    if (!mirrorActive) {
+      // Limpiar placeholder y mostrar imagen que ocupe TODO el espejo
+      mirrorContainer.innerHTML = '';
+      const imgElement = document.createElement('img');
+      imgElement.src = princessImageURL;
+      imgElement.alt = "Natalia Montserrat princesa";
+      imgElement.style.width = "100%";
+      imgElement.style.height = "100%";
+      imgElement.style.objectFit = "cover";
+      imgElement.style.borderRadius = "50% 50% 45% 45%";
+      imgElement.style.display = "block";
+      imgElement.onerror = () => { imgElement.src = fallbackImage; };
+      mirrorContainer.appendChild(imgElement);
+      
+      // Ocultar el placeholder con efecto fade
+      placeholderDiv.style.opacity = "0";
+      placeholderDiv.style.pointerEvents = "none";
+      setTimeout(() => { placeholderDiv.style.display = "none"; }, 300);
+      
+      // Mostrar texto revelado
+      revealTextSpan.style.opacity = "1";
+      revealTextSpan.innerHTML = '✨ "La más hermosa del reino" ✨ 👑';
+      
+      // Brillo extra en el marco
+      mirrorBoxDiv.style.boxShadow = "0 0 0 3px #f5d742, 0 0 0 6px rgba(200,100,0,0.5)";
+      mirrorActive = true;
     } else {
       // si ya está revelado, solo más magia
-      revealedDiv.style.transform = 'scale(1.05)';
-      setTimeout(() => revealedDiv.style.transform = '', 300);
+      revealTextSpan.style.transform = "scale(1.05)";
+      setTimeout(() => revealTextSpan.style.transform = "", 200);
     }
-  });
+  }
 
-  // música ambiental opcional pero discreta (se activa con interacción)
+  const mirrorTrigger = document.getElementById('magicMirrorTrigger');
+  mirrorTrigger.addEventListener('click', revealMirrorImage);
+  mirrorTrigger.addEventListener('touchstart', revealMirrorImage);
+
+  // ---------- MÚSICA AMBIENTAL CON GESTO ----------
   let musicPlaying = false;
-  const audio = document.getElementById('bgMelody');
-  function enableMusicOnFirstTouch() {
+  const audioElem = document.getElementById('bgMelody');
+  function enableMusicOnFirstInteraction() {
     if (!musicPlaying) {
-      audio.volume = 0.2;
-      audio.play().catch(e => console.log("autoplay restringido"));
+      audioElem.volume = 0.2;
+      audioElem.play().catch(e => console.log("autoplay restringido, se necesita interacción"));
       musicPlaying = true;
-      document.removeEventListener('click', enableMusicOnFirstTouch);
-      document.removeEventListener('touchstart', enableMusicOnFirstTouch);
+      document.removeEventListener('click', enableMusicOnFirstInteraction);
+      document.removeEventListener('touchstart', enableMusicOnFirstInteraction);
     }
   }
-  document.addEventListener('click', enableMusicOnFirstTouch);
-  document.addEventListener('touchstart', enableMusicOnFirstTouch);
-  
-  // efectos de brillo en cada página
-  function createStarsFloating() {
-    const starContainer = document.createElement('div');
-    starContainer.style.position = 'fixed';
-    starContainer.style.pointerEvents = 'none';
-    starContainer.style.top = '0';
-    starContainer.style.left = '0';
-    starContainer.style.width = '100%';
-    starContainer.style.height = '100%';
-    starContainer.style.zIndex = '9999';
-    for(let i=0;i<30;i++) {
-      let star = document.createElement('div');
-      star.style.position = 'absolute';
-      star.style.width = '2px';
-      star.style.height = '2px';
-      star.style.background = 'gold';
-      star.style.borderRadius = '50%';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.opacity = Math.random() * 0.7;
-      star.style.animation = `sparkleFly 3s infinite alternate`;
-      starContainer.appendChild(star);
-    }
-    document.body.appendChild(starContainer);
-  }
-  createStarsFloating();
+  document.addEventListener('click', enableMusicOnFirstInteraction);
+  document.addEventListener('touchstart', enableMusicOnFirstInteraction);
 
-  // añadir al inicio el estilo de animación de sparkle existente
-  const styleSheet = document.createElement("style");
-  styleSheet.textContent = `
-    @keyframes sparkleFly {
-      0% { opacity: 0.2; transform: translateY(0px); }
-      100% { opacity: 0.8; transform: translateY(-20px); }
+  // estrellas flotantes de fondo (decoración mágica)
+  function createFloatingStars() {
+    for (let i = 0; i < 35; i++) {
+      const star = document.createElement('div');
+      star.className = 'floating-star';
+      star.innerHTML = ['✨', '⭐', '🌟', '💫'][Math.floor(Math.random() * 4)];
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = 5 + Math.random() * 8 + 's';
+      star.style.animationDelay = Math.random() * 10 + 's';
+      star.style.fontSize = 12 + Math.random() * 12 + 'px';
+      star.style.opacity = 0.3 + Math.random() * 0.4;
+      document.body.appendChild(star);
     }
-  `;
-  document.head.appendChild(styleSheet);
+  }
+  createFloatingStars();
 </script>
 </body>
 </html>
